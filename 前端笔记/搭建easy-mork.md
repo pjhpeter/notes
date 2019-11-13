@@ -1,7 +1,7 @@
 easy-mock要用nodejs启动，需要先安装nodejs
 ```
 ubuntu系统：
-apt install node
+自己下载8.x版本的nodejs，+++一定要8.x版本的！！+++ 
 centos系统：
 curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
 yum install node
