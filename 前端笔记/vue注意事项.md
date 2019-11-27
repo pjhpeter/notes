@@ -1,3 +1,4 @@
+el-form隐藏域处理
 ```
 <el-form-item prop="id" hidden><!-- 隐藏域一定要在el-form-item加上hidden属性，不然空白div会占位置-->
     <el-input type="hidden" v-model="member.id"></el-input>
