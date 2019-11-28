@@ -18,3 +18,7 @@ member: {// 初始化各字段，数字用null，避免不能输入的问题
     address: ""
 }
 ```
+el组件要绑定原生事件，需要在事件名后添加.native修饰符
+```
+<el-input v-model="searchMap.name" placeholder="供应商名称" clearable @keyup.enter.native="fetchData"></el-input>
+```
