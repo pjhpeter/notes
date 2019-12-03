@@ -25,3 +25,6 @@ Vue官方推荐的插件，api提示之类的
 ## Element UI Snippets
 ![Element UI Snippets](https://images.gitee.com/uploads/images/2019/1128/174126_266119e2_5449551.png "屏幕截图.png")<br>
 Element UI 快速生成代码，比如输入elt再按tab键就会生成el-table基本框架代码
+## Windows default keybindings
+![Windows default keybindings](https://images.gitee.com/uploads/images/2019/1203/155957_210fddc6_5449551.png "屏幕截图.png")<br>
+用Ubuntu系统快捷键会跟Windows的不一样，用这个来解决
