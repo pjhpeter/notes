@@ -1,4 +1,4 @@
-## 日期格式化
+### 日期格式化
 ```
 Date.prototype.format = function(fmt) { 
      var o = { 
@@ -20,4 +20,14 @@ Date.prototype.format = function(fmt) {
      }
     return fmt; 
 }
+```
+### 按照对象的key排序
+```
+const newkey = Object.keys(obj).sort();
+var newObj = {}; //创建一个新的对象，用于存放排好序的键值对
+for (var i = 0; i < newkey.length; i++) {
+    //遍历newkey数组
+    newObj[newkey[i]] = obj[newkey[i]]; //向新创建的对象中按照排好的顺序依次增加键值对
+}
+return newObj;
 ```
