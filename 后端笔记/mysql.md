@@ -1,10 +1,10 @@
 ## 安装mysql8.0.12
 ### 下载
-mysql 
-https://cdn.mysql.com//archives/mysql-8.0/mysql-server_8.0.12-1ubuntu18.04_amd64.deb-bundle.tar 
-相关的东西 
-https://pkgs.org/download/libtinfo5 
-http://security.ubuntu.com/ubuntu/pool/universe/m/mecab/libmecab2_0.996-5_amd64.deb 
+mysql<br>
+https://cdn.mysql.com//archives/mysql-8.0/mysql-server_8.0.12-1ubuntu18.04_amd64.deb-bundle.tar <br>
+相关的东西 <br>
+https://pkgs.org/download/libtinfo5 <br>
+http://security.ubuntu.com/ubuntu/pool/universe/m/mecab/libmecab2_0.996-5_amd64.deb <br>
 ### 安装
 解压
 ```
