@@ -17,19 +17,12 @@ sudo dpkg -i xxxxxxxx
 mysql安装顺序如下：
 
 1. mysql-common 
-
 2. libmysqlclient20
-
 3. libmysqlclient-dev
-
 4.libmysqld-dev
-
 5. mysql-community-client
-
 6. mysql-client
-
 7. mysql-community-source
-
 8. mysql-community-server
 
 中间会出现有两个选项，一定要选择第二个，5.x什么的那一项
