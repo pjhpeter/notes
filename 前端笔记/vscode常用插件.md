@@ -16,6 +16,9 @@ css样式有提示
 ## Node Snippets
 ![Node Snippets](https://images.gitee.com/uploads/images/2019/1128/172731_b1ba1712_5449551.png "屏幕截图.png")<br>
 NodeJS的api会提示
+## Syntax Highlighting for yarn.lock files
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1223/000917_8011ddcf_5449551.png "屏幕截图.png")<br>
+yarn.lock文件高亮显示
 ## Vue 2 Snippets
 ![Vue 2 Snippets](https://images.gitee.com/uploads/images/2019/1128/173226_2d199abd_5449551.png "屏幕截图.png")<br>
 基于Vue2.x版本api的快速生成代码，比如输入newvue再按tab键就会生成new Vue(....)基础框架代码
