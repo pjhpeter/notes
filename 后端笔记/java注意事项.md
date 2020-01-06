@@ -3,3 +3,6 @@
 
 ### JPA查询懒加载报no session错误
 在service添加@Transactional，只有查询逻辑最好加上readonly = true
+
+### Spring Cache注解有时候不起作用
+Spring的缓存注解只能public类型的方法上
