@@ -26,3 +26,15 @@ mysql安装顺序如下：
 8. mysql-community-server
 
 中间会出现有两个选项，一定要选择第二个，5.x什么的那一项
+
+## MySQL8.0版本liquibase.exception.LockException处理
+
+![输入图片说明](https://images.gitee.com/uploads/images/2020/0113/122106_79eabc8d_5449551.png "屏幕截图.png")
+
+```SQL
+# MySQL5.7以前是这样的
+select * from DATABASECHANGELOGLOCK;
+
+# MySQL8.0以后是这样的
+select * from ACT_DMN_DATABASECHANGELOGLOCK;
+```
