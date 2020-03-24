@@ -7,11 +7,16 @@
 ### Spring Cache注解有时候不起作用
 Spring的缓存注解只能public类型的方法上
 
+### 查看jit汇编信息JVM配置
+-server -XX:+PrintCompilation -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -XX:+LogCompilation -XX:LogFile=jit.log
+
 ### Win10查看jit汇编信息报错
--- 错误
+++ 错误
+
 Could not load hsdis-amd64.dll; library not loadable; PrintAssembly is disabled
 
--- 解决
+++ 解决
+
 下载hsdis
 
 http://vorboss.dl.sourceforge.net/project/fcml/fcml-1.1.1/hsdis-1.1.1-win32-amd64.zip
