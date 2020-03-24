@@ -21,4 +21,4 @@ Could not load hsdis-amd64.dll; library not loadable; PrintAssembly is disabled
 
 http://vorboss.dl.sourceforge.net/project/fcml/fcml-1.1.1/hsdis-1.1.1-win32-amd64.zip
 
-下载对应版本解压得到dll，保存到jdk目录下\jre\bin\server就可以了
+下载对应版本解压得到dll，保存到jre\bin\server就可以了
