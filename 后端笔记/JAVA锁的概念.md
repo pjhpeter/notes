@@ -65,24 +65,36 @@ public class LockDemo1 {
 ### 悲观锁
 假定会发生并发冲突，同步所有数据的相关操作，从读数据就开始上锁
 ```java
-// 同步块方法
-private long count = 0;
-
-public void testSync() {
-    for (int i = 0; i < 3; i++) {
-	new Thread(() -> {
-	    long start = System.currentTimeMillis();
-	    while (System.currentTimeMillis() - start < 2000) {
-	    //--------悲观锁----------//
-	    synchronized (this) {
-	        count++;
-	    }
-	    //--------悲观锁----------//
-        }
-        long end = System.currentTimeMillis();
-        System.out.println("同步块方法运行" + (end - start) + "后count的值为：" + count);
-        }).start();
-    }
+// 锁，同步关键字使用
+public class ObjectSyncDemo1 {
+	
+	// 不加static关键字的话是对象锁，每个类有自己的锁，不能实现同步效果
+	// 加static关键字是类锁，所有对象抢同一把锁，可以实现同步
+	// ---------悲观锁--------------//
+	public synchronized static void test1() {
+		try {
+			System.out.println(Thread.currentThread() + "我开始执行了");
+			Thread.sleep(3000L);
+			System.out.println(Thread.currentThread() + "我结束执行了");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	// ---------悲观锁--------------//
+	
+	public static void main(String[] args) throws Exception{
+		new Thread(() -> {
+//			new ObjectSyncDemo1().test1();
+			ObjectSyncDemo1.test1();
+		}).start();
+		
+		Thread.sleep(1000L);
+		
+		new Thread(() -> {
+//			new ObjectSyncDemo1().test1();
+			ObjectSyncDemo1.test1();
+		}).start();
+	}
 }
 ```
 
