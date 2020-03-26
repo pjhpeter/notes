@@ -64,6 +64,28 @@ public class LockDemo1 {
 
 ### 悲观锁
 假定会发生并发冲突，同步所有数据的相关操作，从读数据就开始上锁
+```java
+// 同步块方法
+private long count = 0;
+
+public void testSync() {
+    for (int i = 0; i < 3; i++) {
+	new Thread(() -> {
+	    long start = System.currentTimeMillis();
+	    while (System.currentTimeMillis() - start < 2000) {
+	    //--------悲观锁----------//
+	    synchronized (this) {
+	        count++;
+	    }
+	    //--------悲观锁----------//
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("同步块方法运行" + (end - start) + "后count的值为：" + count);
+        }).start();
+    }
+}
+```
+
 
 ### 乐观锁（自旋锁的另外一种说法）
 假定没有冲突，修改数据时如果发现数据与之前所取得值不一致，读取最新的值，修改之后再执行更新操作
