@@ -65,7 +65,7 @@ public class LockDemo1 {
 ### 悲观锁
 假定会发生并发冲突，同步所有数据的相关操作，从读数据就开始上锁
 ```java
-// 锁，同步关键字使用
+// 悲观锁、独享锁
 public class ObjectSyncDemo1 {
 	
 	// 不加static关键字的话是对象锁，每个类有自己的锁，不能实现同步效果
@@ -111,6 +111,26 @@ public class ObjectSyncDemo1 {
 
 ### 可重入锁、不可重入锁
 线程拿到一把锁后，可以重复进入同一把锁所同步的其他代码
+```java
+// 可重入锁
+public class ObjectSyncDemo2 {
+
+	// ---------可重入锁--------------//
+	public synchronized void test2(Object arg) {
+		System.out.println(Thread.currentThread() + "我开始执行了" + arg);
+		if (arg == null) {
+			// 递归调用，同一个线程再次进入被锁方法，可以执行成功
+			test2(new Object());
+		}
+		System.out.println(Thread.currentThread() + "我结束执行了" + arg);
+	}
+	// ---------可重入锁--------------//
+
+	public static void main(String[] args) throws Exception {
+		new ObjectSyncDemo2().test2(null);
+	}
+}
+```
 
 ### 公平锁、非公平锁
 争抢锁的顺序，如果是按先来后到的顺序则为公平锁
