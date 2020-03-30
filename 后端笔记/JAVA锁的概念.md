@@ -110,6 +110,58 @@ public class ObjectSyncDemo1 {
 ### 共享锁（读锁）
 给资源加上锁后只能读不能改，其他线程也只能给资源加读锁，不能加写锁（多读）
 
+```java
+public class ReentrantReadWriteLockDemo2 {
+
+    private ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+
+    public static void main(String[] args) {
+        ReentrantReadWriteLockDemo2 readWriteLockDemo1 = new ReentrantReadWriteLockDemo2();
+
+        new Thread(() -> {
+            readWriteLockDemo1.read(Thread.currentThread());
+        }).start();
+
+        new Thread(() -> {
+            readWriteLockDemo1.read(Thread.currentThread());
+        }).start();
+
+        new Thread(() -> {
+            readWriteLockDemo1.write(Thread.currentThread());
+        }).start();
+    }
+
+    // 使用读锁，读操作可以并发执行
+    public void read(Thread thread) {
+        readWriteLock.readLock().lock();
+        try {
+            long start = System.currentTimeMillis();
+            while (System.currentTimeMillis() - start <= 1) {
+                System.out.println(thread.getName() + "正在进行读操作");
+            }
+            System.out.println("读操作完毕");
+        } finally {
+            readWriteLock.readLock().unlock();
+        }
+    }
+
+    // 使用写锁，只有一个线程可以写，且读锁没有释放，不能上写锁
+    public void write(Thread thread) {
+        readWriteLock.writeLock().lock();
+        try {
+            long start = System.currentTimeMillis();
+            while (System.currentTimeMillis() - start <= 1) {
+                System.out.println(thread.getName() + "正在进行写操作");
+            }
+            System.out.println("写操作完毕");
+        } finally {
+            readWriteLock.writeLock().unlock();
+        }
+    }
+
+}
+```
+
 ### 可重入锁、不可重入锁
 线程拿到一把锁后，可以重复进入同一把锁所同步的其他代码
 ```java
