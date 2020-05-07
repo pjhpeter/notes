@@ -13,3 +13,16 @@ transform: translateY(50%)
 ```
 font-family: Avenir,Tahoma,Arial,PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
 ```
+### 单行文字过长用省略号代替
+```css
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+```
+### 多行文字过长用省略号代替
+```css
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+```
