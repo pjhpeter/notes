@@ -51,3 +51,7 @@ yarn global dir
 -- 将返回的路径下面的/node_modules/.bin添加到path环境变量中,比如这个：
 /home/user/.local/yarn/global/node_modules/.bin
 ```
+### yarn更新依赖
+```cmd
+yarn upgrade-interactive
+```
