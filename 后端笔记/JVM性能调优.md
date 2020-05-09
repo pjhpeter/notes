@@ -15,6 +15,7 @@
 -xx:+UseConcMarkSweepGC
 
 > 前台应用GC机制可使用UseConcMarkSweepGC（CMS+PartNew），并行回收，后台应用使用默认即可，GC机制会根据JDK版本不停更新，不是一尘不变
+>
 > 90%的情况下只需要调整垃圾回收器即可
 
 ### 问题定位命令
