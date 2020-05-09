@@ -7,3 +7,7 @@ Xmx：堆内存最大值
 
 ### GC参数
 
+
+### 问题定位命令
+jmap、jstat、jstack
+
