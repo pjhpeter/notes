@@ -1,13 +1,20 @@
 ### 堆内存设置
-Xms：堆内存最小值
+-Xms：堆内存最小值
 
-Xmx：堆内存最大值
+-Xms128m
+
+-Xmx：堆内存最大值
+
+-Xmx512m
 
 > 最大堆内存设置不能占用太多系统资源，比如8g的服务器，设置成4g，这样即使内存溢出了，也不影响系统运行，保证顺利执行错误定位的命令：jmap、jstat、jstack等
 
 ### GC参数
+-XX：选择垃圾回收器
 
-> 前台应用GC机制可使用CMS，并行回收，后台应用使用默认即可，GC机制会根据JDK版本不停更新，不是一尘不变
+-xx:+UseConcMarkSweepGC
+
+> 前台应用GC机制可使用UseConcMarkSweepGC（CMS+PartNew），并行回收，后台应用使用默认即可，GC机制会根据JDK版本不停更新，不是一尘不变
 
 ### 问题定位命令
 jmap、jstat、jstack
