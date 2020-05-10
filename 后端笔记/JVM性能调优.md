@@ -19,6 +19,7 @@
 
 ## 问题定位
 ### FullGC造成系统停顿时间过长
+当程序出现频繁FullGC时，表示程序可能即将出问题
 ```java
 /**
  * 频繁使用System.gc导致FullGC次数过多
@@ -43,3 +44,10 @@ public class FullGCDemo1 {
 ### 问题定位命令
 jmap、jstat、jstack
 
+```cmd
+//查看进程id
+> jcmd
+
+//查看gc情况
+> jstat -gc <进程id>
+```
