@@ -19,7 +19,26 @@
 
 ## 问题定位
 ### FullGC造成系统停顿时间过长
-
+```java
+/**
+ * 频繁使用System.gc导致FullGC次数过多
+ * 
+ * server模式运行，打印GC日志
+ * 
+ * -Xmx512m -server -verbose:gc -XX:+PrintGCDetails -Xloggc:filepath -XX:+HeapDumpOnOutOfMemoryError
+ */
+public class FullGCDemo1 {
+    
+    public static void main(String[] args) throws InterruptedException {
+        for (int i = 0; i < 1000; i++) {
+            byte[] b = new byte[1024 * 1024 * 256]; //256m
+            System.gc();
+            System.out.println("我GC了一次");
+            Thread.sleep(2000L);
+        }
+    }
+}
+```
 
 ### 问题定位命令
 jmap、jstat、jstack
