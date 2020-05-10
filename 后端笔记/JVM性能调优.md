@@ -61,3 +61,4 @@ jmap -dump:format=b,file=2020-5-10.hpof -F <进程id>
 ```
 2. 重启服务，保证可用性
 3. 分析内存快照
+使用eclipse mat工具分析内存占用情况，找出问题来源
