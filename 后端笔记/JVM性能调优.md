@@ -59,3 +59,5 @@ jmap、jstat、jstack
 ```cmd
 jmap -dump:format=b,file=2020-5-10.hpof -F <进程id> 
 ```
+2. 重启服务，保证可用性
+3. 分析内存快照
