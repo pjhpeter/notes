@@ -54,3 +54,8 @@ jmap、jstat、jstack
 //查看gc情况
 > jstat -gc <进程id>
 ```
+### 问题排查步骤
+1. 使用jmap命令导出内存快照
+```cmd
+jmap -dump:format=b,file=2020-5-10.hpof -F <进程id> 
+```
