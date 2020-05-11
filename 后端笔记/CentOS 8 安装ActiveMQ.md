@@ -59,3 +59,28 @@ SyslogIdentifier=activemq
 [Install]
 WantedBy=multi-user.target
 ```
+
+4. 用找出java命令的目录
+```cmd
+whereis java
+```
+
+5. 修改ActiveMQ的配置文件
+```cmd
+vim /var/activemq/bin/env
+```
+将JAVA_HOME的路径写到配置文件的JAVA_HOME参数中
+```
+# (set JAVACMD to "auto" for automatic detection)
+JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el8_1.x86_64"
+```
+
+6. 重新加载服务配置
+```cmd
+systemctl daemon-reload
+```
+
+7. 启动服务
+```cmd
+systemctl start activemq
+```
