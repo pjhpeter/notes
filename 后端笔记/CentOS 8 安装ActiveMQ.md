@@ -84,3 +84,18 @@ systemctl daemon-reload
 ```cmd
 systemctl start activemq
 ```
+
+8. 设置开机自启动
+创建链接
+```cmd
+ln -s /usr/lib/systemd/system/activemq.service /etc/systemd/system/multi-user.target.wants/activemq.service
+```
+开机自启
+```cmd
+systemctl enable activemq
+```
+检查是否添加开机自启成功
+```cmd
+systemctl list-unit-files | grep activemq
+```
+
