@@ -50,3 +50,5 @@ async function doNext(to, next) {
   next();
 }
 ```
+Vue-cli4配置sass全局变量
+[转载的](https://blog.csdn.net/qq_41595903/article/details/103381055)
