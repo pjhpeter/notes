@@ -61,5 +61,6 @@ Vue+ViewUI时，enlint报Parsing error: x-invalid-end-tag错误
 ```
 2. 在.eslintrc.js的rules中添加：
 ```js
-'vue/no-parsing-error': [2, { "x-invalid-end-tag": false }]
+"vue/no-parsing-error": [2, { "x-invalid-end-tag": false }]
 ```
+3. 重启vscode
