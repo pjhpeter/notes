@@ -50,11 +50,11 @@ async function doNext(to, next) {
   next();
 }
 ```
-Vue-cli4配置sass全局变量
++ Vue-cli4配置sass全局变量
 
 [转载的](https://blog.csdn.net/qq_41595903/article/details/103381055)
 
-Vue+ViewUI时，enlint报Parsing error: x-invalid-end-tag错误
++ Vue+ViewUI时，enlint报Parsing error: x-invalid-end-tag错误
 1. 在vscode的setting.json中添加：
 ```json
 "vetur.validation.template": false
