@@ -64,3 +64,5 @@ Vue+ViewUI时，enlint报Parsing error: x-invalid-end-tag错误
 "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }]
 ```
 3. 重启vscode
+
+ViewUi的Modal组件的fullscreen和draggable不能共用
