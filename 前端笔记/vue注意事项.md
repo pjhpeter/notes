@@ -1,10 +1,10 @@
-el-form隐藏域处理
++ el-form隐藏域处理
 ```vue
 <el-form-item prop="id" hidden><!-- 隐藏域一定要在el-form-item加上hidden属性，不然空白div会占位置-->
     <el-input type="hidden" v-model="member.id"></el-input>
 </el-form-item>
 ```
-el-form的model需要初始化，避免不能输入的问题
++ el-form的model需要初始化，避免不能输入的问题
 ```json
 member: {// 初始化各字段，数字用null，避免不能输入的问题
     id: null,
@@ -18,22 +18,22 @@ member: {// 初始化各字段，数字用null，避免不能输入的问题
     address: ""
 }
 ```
-element组件要绑定原生事件，需要在事件名后添加.native修饰符
++ element组件要绑定原生事件，需要在事件名后添加.native修饰符
 ```vue
 <el-input v-model="searchMap.name" placeholder="供应商名称" clearable @keyup.enter.native="fetchData"></el-input>
 ```
-element修改表头样式，添加header-cell-class-name
++ element修改表头样式，添加header-cell-class-name
 ```vue
 <el-table :data="list" border stripe height="480" header-cell-class-name="el-table-header">
 ```
-全局css文件override-elment-ui.css
++ 全局css文件override-elment-ui.css
 ```css
 .el-table-header {
     background-color: #66b1ff !important;
     color: #fff;
 }
 ```
-Vue动态加载路由时，会出现刷新页面变成空白页的情况，是由于刷新时路由跳转，但组件没有异步加载完成，所以找不到对应组件和路由，解决方法如下：
++ Vue动态加载路由时，会出现刷新页面变成空白页的情况，是由于刷新时路由跳转，但组件没有异步加载完成，所以找不到对应组件和路由，解决方法如下：
 ```js
 // 刷新页面标志
 let doRefresh = true;
@@ -65,4 +65,4 @@ Vue+ViewUI时，enlint报Parsing error: x-invalid-end-tag错误
 ```
 3. 重启vscode
 
-ViewUi的Modal组件的fullscreen和draggable不能共用
++ ViewUi的Modal组件的fullscreen和draggable不能共用
