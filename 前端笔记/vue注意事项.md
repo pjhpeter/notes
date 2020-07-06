@@ -66,3 +66,13 @@ async function doNext(to, next) {
 3. 重启vscode
 
 + ViewUi的Modal组件的fullscreen和draggable不能共用
+
++ Vue监听器监听复杂路径
+```ts
+// 普通的监听器写法无法监听复杂路径的变量
+// 如果要监听复杂路径的变量，用函数的方式返回变量
+this.$watch(
+  () => (this.$children[0] as any).modalIndex,
+  (this as any).activeTab
+);
+```
