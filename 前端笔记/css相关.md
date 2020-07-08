@@ -52,3 +52,41 @@ align-content: flex-start;
     background: #ccc;
 }
 ```
+### 毛玻璃
+
+有好多没关系的css，主要是background的设置，原理是做两层div，上层几乎透明，用来存放组件，下层放背景，做毛玻璃
+
+```css
+.content {
+      height: 100%;
+      background: url("1.jpg") center / cover no-repeat,
+      background-size: 100% 100%
+}
+.footer,
+    .footer-background {
+      position: fixed;
+      display: inline-block;
+      width: 100%;
+      bottom: 0;
+      height: $footerHeight;
+      padding: 0 !important;
+      background-color: rgba($color: #ffffff, $alpha: 0.6);
+      box-sizing: content-box;
+      z-index: 99999;
+      border-top: 1px solid rgba($color: $background, $alpha: 0.2);
+      .ivu-layout {
+        background-color: rgba($color: white, $alpha: 0);
+        .start-button-container,
+        .icon-container {
+          background-color: rgba($color: white, $alpha: 0);
+        }
+      }
+    }
+    .footer-background {
+      background: url("1.jpg") center / cover no-repeat fixed,
+      background-size: 100% 100%
+      z-index: 99998;
+      -webkit-filter: blur(10px);
+      filter: blur(10px);
+    }
+```
