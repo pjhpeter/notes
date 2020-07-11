@@ -76,3 +76,12 @@ this.$watch(
   (this as any).activeTab
 );
 ```
+
++ 处理Vue Router Navigating to current location
+```ts
+// 处理路由跳转当前路径时报错的问题：Navigating to current location ("/") is not allowed
+const originalPush:Function = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location: RawLocation) {
+  return originalPush.call(this, location).catch((error: any) => error);
+};
+```
